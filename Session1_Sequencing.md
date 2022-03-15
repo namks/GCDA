@@ -142,7 +142,7 @@ This practice session consists of 4 steps.
 4) Convert `GVCF` to `VCF`
  * `GenotypeGVCFs`
 
-### 4. Preprocessing the `FASTQ` file
+### 4. (Optional) Preprocessing the `FASTQ` file
 
 #### Convert the raw `FASTQ` file to an unmapped `BAM` file
 
@@ -192,7 +192,7 @@ INTERLEAVE=true \
 NON_PF=true
 ```
 
-### 5. Convert the `FASTQ` file to an aligned `BAM` file
+### 5. Convert the preprocessed `FASTQ` file to an aligned `BAM` file
 
 #### Align reads using `BWA MEM`
 
@@ -274,6 +274,12 @@ gatk --java-options '-Xmx16g' ApplyBQSR \
 -O bqsr.bam
 ```
 
+#### IGV Viewer (Software for visualization of `BAM` file)
+
+We can visualize the aligned `BAM` file with the [IGV viewer](https://software.broadinstitute.org/software/igv/home).
+
+For example, we can observe high coverage around SUMO1P1 gene. (`HG00096.chrom20.ILLUMINA.bwa.GBR.exome.20120522.bam`)
+
 ### 6. Converting `BAM` to `GVCF`
 
 #### Convert the individual `BAM` files to `GVCF` files
@@ -345,5 +351,5 @@ You can check the contents of the final `VCF` file.
 20	76962	.	T	C	19086.73	.	AC=6;AF=1.00;AN=6;BaseQRankSum=1.80;DP=539;ExcessHet=0.0000;FS=0.000;MLEAC=6;MLEAF=1.00;MQ=59.41;MQRankSum=-3.240e-01;QD=28.73;ReadPosRankSum=1.42;SOR=0.260	GT:AD:DP:GQ:PL	1/1:0,357:357:99:14330,1073,0	1/1:1,65:66:99:2125,188,0	1/1:0,84:84:99:2645,250,0
 ```
 
-We use this `VCF` file in the analysis.
+We use this `VCF` file in the analysis!
 
