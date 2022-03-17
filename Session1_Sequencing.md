@@ -266,6 +266,16 @@ O=sorted.bam \
 SO=coordinate 
 ```
 
+#### Create Recalibration Table using `BaseRecalibrator`
+
+```
+gatk --java-options '-Xmx16g' BaseRecalibrator \
+-I sorted.bam \
+-R ~/GCDA/1_sequencing/data/human_g1k_v37.fasta \
+--known-sites ~/GCDA/1_sequencing/data/ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz \
+-O recal_data.table
+```
+
 #### Base Quality Score Recalibration (BQSR)
 
 ```
