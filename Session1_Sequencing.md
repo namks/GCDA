@@ -42,7 +42,7 @@ export PATH="/PATH_TO_BWA/:$PATH"
 
 To map our raw unmapped reads, we need the reference panel and the information for known variants.
 Here, we will use the `FASTA` file of 1000 Genome Phase 3 (GRCh37 build) and the `VCF` file for known variants.
-You can browse [FTP server](ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/) of 1000 Genome Project.
+You can browse FTP server (ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/) of 1000 Genome Project.
 
 ```
 # Download 1000 Genome reference panel
