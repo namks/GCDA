@@ -3,7 +3,7 @@
 ## Practice Session #1: Sequencing
 
 In this session, we will learn how to convert raw unmapped read files (`FASTQ`) to analysis-ready files (`VCF`).
-The overall process in this session is based on the [GATK Best Practice](https://gatk.broadinstitute.org/hc/en-us/sections/360007226651-Best-Practices-Workflows).
+The overall process in this session is based on the [GATK Best Practice](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312-Getting-Started).
 This document was created on March 15, 2022 and the following contents were tested on the GSDS cluster (Ubuntu 18.04 LTS).
 
 ### 1. Setting up the environment
