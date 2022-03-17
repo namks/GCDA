@@ -2,13 +2,13 @@
 
 ## Practice Session #1: Sequencing
 
-In this session, we will learn how to convert raw unmapped read files (`FASTQ`) to analysis-ready files (`VCF`).
-The overall process in this session is based on the [GATK Best Practice](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312-Getting-Started).
+In this session, we will learn how to convert raw unmapped read files (`FASTQ`) to analysis-ready files (`VCF`). \
+The overall process in this session is based on the [GATK Best Practice](https://gatk.broadinstitute.org/hc/en-us/categories/360002302312-Getting-Started). \
 This document was created on March 15, 2022 and the following contents were tested on the GSDS cluster (Ubuntu 18.04 LTS).
 
 ### 1. Setting up the environment
 
-We will use the Anaconda environment on the GSDS cluster.
+We will use the Anaconda environment on the GSDS cluster. \
 It is already created on the GSDS cluster, but you can create the environment on your local machine with the following command:
 
 ```
@@ -40,8 +40,8 @@ export PATH="/PATH_TO_BWA/:$PATH"
 
 ### 2. Preparing data
 
-To map our raw unmapped reads, we need the reference panel and the information for known variants.
-Here, we will use the `FASTA` file of 1000 Genome Phase 3 (GRCh37 build) and the `VCF` file for known variants.
+To map our raw unmapped reads, we need the reference panel and the information for known variants. \
+Here, we will use the `FASTA` file of 1000 Genome Phase 3 (GRCh37 build) and the `VCF` file for known variants. \
 You can browse FTP server (ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/) of 1000 Genome Project.
 
 ```
@@ -117,7 +117,7 @@ You can learn more about `FASTQ` files on [Wikipedia](https://en.wikipedia.org/w
 1000 Genome Project at https://www.internationalgenome.org/faq/about-fastq-sequence-read-files/
 
 
-Many of individuals in 1000 Genome Project have multiple `FASTQ` files, because many of them were sequenced using more than one run of a sequencing machine.
+Many of individuals in 1000 Genome Project have multiple `FASTQ` files, because many of them were sequenced using more than one run of a sequencing machine. \
 Each set of files named like `SRR062634_1.filt.fastq.gz`, `SRR062634_2.filt.fastq.gz` and `SRR062634.filt.fastq.gz` represent all the sequence from a sequencing run.
 
 The labels with `_1` and `_2` represent paired-end files, and the files which do not have a number in their name are single-ended reads. (or if one of a pair of reads gets rejected the other read gets placed in the single file.)
@@ -147,7 +147,8 @@ This practice session consists of 4 steps.
 
 #### Convert the raw `FASTQ` file to an unmapped `BAM` file
 
-Using `FastqToSam` function of Picard, we can convert the `FASTQ` file to an `uBAM` file.
+Using `FastqToSam` function of Picard, we can convert the `FASTQ` file to an unmapped `BAM` file.
+
 ```
 java -jar ~/GCDA/1_sequencing/utils/picard.jar FastqToSam \
 F1=~/GCDA/1_sequencing/data/SRR062634.filt.fastq \
@@ -215,7 +216,7 @@ SRR062634.10000713	16	2	39841450	60	100M	*	0	0	TTAGCCATTCTAGTAGCTGTGTAGCAATTATGC
 SRR062634.10000906	0	5	97444533	60	100M	*	0	0	CAGTTTGATCCTTCTGAATTAGATTTTCCATACATGAAGCCTATGGGACTCTGGTGGGCAGTAGAAGATAAACTGTAATTTAAGTGAGGTTTTTATAAGC	EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE5BDDCC?EEEEEEDBEEEEEEEDEEEEA?DEEEEBE@EEEEADEDEE@AD?E	NM:i:1	MD:Z:48T51	AS:i:95	XS:i:20
 ```
 
-The header section must be prior to the alignment section if it is present. Headings begin with the '@' symbol, which distinguishes them from the alignment section. 
+The header section must be prior to the alignment section if it is present. Headings begin with the '@' symbol, which distinguishes them from the alignment section. \
 Alignment sections have 11 mandatory fields, as well as a variable number of optional fields.
 
 The information of some columns are as follows:
@@ -285,8 +286,8 @@ For example, we can observe high coverage around SUMO1P1 gene. (`HG00096.chrom20
 
 #### Convert the individual `BAM` files to `GVCF` files
 
-In this section, we will use the real data of 3 individuals in 1000 Genome Project (`HG00096`, `HG00097`, `HG00099`).
-The aligned `BAM` files of them can be found at `~/GCDA/1_sequencing/data/` folder.
+In this section, we will use the real data of 3 individuals in 1000 Genome Project (`HG00096`, `HG00097`, `HG00099`). \
+The aligned `BAM` files of them can be found at `~/GCDA/1_sequencing/data/` folder. \
 We can convert these `BAM` files to `GVCF` files.
 
 ```
