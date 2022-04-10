@@ -2,13 +2,13 @@
 
 ## Practice Session #2: Genome-wide Association Studies (GWAS)
 
-In this session, we will learn how to conduct the genome-wide association analysis using SAIGE.
-(References: [Paper](https://www.nature.com/articles/s41588-018-0184-y), [Github](https://github.com/saigegit/SAIGE), [Documentation](https://saigegit.github.io/SAIGE-doc/))
+In this session, we will learn how to conduct the genome-wide association analysis using SAIGE. \
+(References: [Paper](https://www.nature.com/articles/s41588-018-0184-y), [Github](https://github.com/saigegit/SAIGE), [Documentation](https://saigegit.github.io/SAIGE-doc/)) \
 This document was created on April 10, 2022 and the following contents were tested on the GSDS cluster (Ubuntu 18.04 LTS).
 
 ### 1. Setting up the environment
 
-We will use [Docker](https://www.docker.com/) on the GSDS cluster (`leelabsg00` node).
+We will use [Docker](https://www.docker.com/) on the GSDS cluster (`leelabsg00` node). \
 It is already created on the GSDS cluster, but you can create the environment on your local machine with the following command:
 
 ```
@@ -27,7 +27,7 @@ docker run --rm -it -v /home/leelabguest/GCDA/2_GWAS:/home/leelabguest/GCDA/2_GW
 
 ### 2. Preparing data
 
-We need (individual-level) genotype and phenotype files to conduct GWAS.
+We need (individual-level) genotype and phenotype files to conduct GWAS. \
 However, access to these files is strictly restricted.
 
 Let's take a quick look at what the real data (UK Biobank) looks like.
@@ -63,7 +63,7 @@ It contains meta-information lines, a header line, and then data lines each cont
 
 ##### PLINK binary (`bed`, `bim`, `fam`)
 
-PLINK binary files are the binary version of PLINK files (`ped`, `map`).
+PLINK binary files are the binary version of PLINK files (`ped`, `map`). \
 PLINK binary genotype data consists of 3 files:
 
 * `bed` file: Genotype data in binary format
@@ -100,7 +100,7 @@ PLINK binary genotype data consists of 3 files:
 1a10	1a10	0	0	0	-9
 ```
 
-`bed` file contains the genotype information (in binary format). 
+`bed` file contains the genotype information (in binary format). \
 We cannot easily check the genotype information, but we can see the bitwise 
 
 ```
